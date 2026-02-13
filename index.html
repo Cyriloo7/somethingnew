@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#b83d5e">
+  <meta name="description" content="A special Valentine's Day message, made with love.">
+  <title>Happy Valentine's Day 💕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-gradient" aria-hidden="true"></div>
+  <div id="ambient-hearts" aria-hidden="true"></div>
+  <div id="hearts-container" aria-hidden="true"></div>
+
+  <header class="hero reveal-section" role="banner">
+    <div class="hero-heart-bg" aria-hidden="true">
+      <div class="hero-heart-3d"></div>
+    </div>
+    <div class="hero-inner">
+      <p class="hero-label" aria-hidden="true">For you</p>
+      <h1 class="hero-title">Happy Valentine's Day</h1>
+      <p class="hero-subtitle">Made with love, just for you</p>
+      <p class="hero-name">Nayana</p>
+    </div>
+  </header>
+
+  <div class="letter-cta reveal-section">
+    <button type="button" class="btn-open-letter" id="openLetter" aria-label="Open your love letter">
+      <span class="btn-open-letter-icon" aria-hidden="true">💌</span>
+      <span>Open your letter</span>
+    </button>
+  </div>
+
+  <section class="letter-overlay" id="letterOverlay" role="dialog" aria-modal="true" aria-label="Love letter" aria-hidden="true">
+    <div class="letter-paper">
+      <button type="button" class="btn-close-letter" id="closeLetter" aria-label="Close letter">×</button>
+      <h2>My Dearest,</h2>
+      <p>Every moment with you feels like a little piece of magic. You make ordinary days extraordinary and fill my heart with so much joy.</p>
+      <p>Thank you for being you — for your smile, your kindness, and the way you make everything better just by being there.</p>
+      <p class="letter-signature">Forever yours, with all my love 💕</p>
+    </div>
+  </section>
+
+  <section class="valentine-question reveal-section" aria-labelledby="valentine-heading">
+    <div class="valentine-question-inner">
+      <h2 id="valentine-heading" class="valentine-heading">Will you be my Valentine?</h2>
+      <p class="valentine-tagline">I'd be honoured if you said yes</p>
+      <div class="valentine-divider" aria-hidden="true"></div>
+      <div class="valentine-actions">
+        <button type="button" class="btn btn-yes" id="btnYes" aria-label="Yes, I'll be your Valentine">
+          <span class="btn-icon" aria-hidden="true">💖</span>
+          <span>Yes, always</span>
+        </button>
+        <button type="button" class="btn btn-no" id="btnNo" aria-label="Maybe later">
+          <span>Maybe later</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="reasons-section reveal-section" aria-labelledby="reasons-heading">
+    <div class="reasons-section-header">
+      <h2 id="reasons-heading">Reasons I love you</h2>
+      <p class="reasons-subtitle">Tap each card to uncover a reason</p>
+      <div class="reasons-divider" aria-hidden="true"></div>
+    </div>
+    <div class="reasons-grid">
+      <article class="reason-card" data-reason="Your smile lights up my whole day" data-index="1">
+        <span class="reason-number" aria-hidden="true">01</span>
+        <span class="reason-heart" aria-hidden="true">❤️</span>
+        <p class="reason-text"></p>
+      </article>
+      <article class="reason-card" data-reason="You make me laugh when I need it most" data-index="2">
+        <span class="reason-number" aria-hidden="true">02</span>
+        <span class="reason-heart" aria-hidden="true">💕</span>
+        <p class="reason-text"></p>
+      </article>
+      <article class="reason-card" data-reason="You believe in me more than I sometimes believe in myself" data-index="3">
+        <span class="reason-number" aria-hidden="true">03</span>
+        <span class="reason-heart" aria-hidden="true">💗</span>
+        <p class="reason-text"></p>
+      </article>
+      <article class="reason-card" data-reason="Every adventure with you is my favorite" data-index="4">
+        <span class="reason-number" aria-hidden="true">04</span>
+        <span class="reason-heart" aria-hidden="true">💖</span>
+        <p class="reason-text"></p>
+      </article>
+      <article class="reason-card" data-reason="You're the best part of my every day" data-index="5">
+        <span class="reason-number" aria-hidden="true">05</span>
+        <span class="reason-heart" aria-hidden="true">💝</span>
+        <p class="reason-text"></p>
+      </article>
+    </div>
+  </section>
+
+  <section class="love-meter-section reveal-section" aria-labelledby="love-meter-heading">
+    <div class="love-meter-inner">
+      <header class="love-meter-header">
+        <h2 id="love-meter-heading">How much I love you</h2>
+        <p class="love-meter-subtitle">Hold the heart to fill the meter</p>
+        <div class="love-meter-divider" aria-hidden="true"></div>
+      </header>
+      <div class="love-meter-card">
+        <div class="love-meter-wrap">
+          <div class="love-meter-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Love meter">
+            <div class="love-meter-fill" id="loveMeterFill"></div>
+          </div>
+          <button type="button" class="love-meter-heart" id="loveMeterHeart" aria-label="Hold to fill the love meter">
+            <span aria-hidden="true">❤️</span>
+          </button>
+        </div>
+        <p class="love-meter-label" id="loveMeterLabel">0%</p>
+        <p class="love-meter-message" id="loveMeterMessage" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="locket-section reveal-section" aria-labelledby="locket-heading">
+    <header class="locket-header">
+      <h2 id="locket-heading" class="locket-heading">Open the locket</h2>
+      <p class="locket-subtitle">Tap to reveal the message inside</p>
+      <div class="locket-divider" aria-hidden="true"></div>
+    </header>
+    <div class="locket-card">
+      <div class="locket-scene" id="locketScene">
+        <div class="locket-glow locket-glow-outer" aria-hidden="true"></div>
+        <div class="locket-glow locket-glow-inner" id="locketGlow" aria-hidden="true"></div>
+        <button type="button" class="locket" id="locket" aria-label="Open the locket to reveal a message">
+          <div class="locket-inner" id="locketInner">
+            <p class="locket-message">You're the best thing that ever happened to me.</p>
+            <span class="locket-heart" aria-hidden="true">💕</span>
+          </div>
+          <div class="locket-half locket-left" aria-hidden="true"></div>
+          <div class="locket-half locket-right" aria-hidden="true"></div>
+          <div class="locket-clasp" aria-hidden="true"></div>
+        </button>
+        <div id="locket-hearts-spawn" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer reveal-section" role="contentinfo">
+    <p>I love you. Happy Valentine's Day. 💕</p>
+    <p class="footer-date">February 14, 2025</p>
+  </footer>
+
+  <div id="confetti-container" aria-hidden="true"></div>
+
+  <div class="yes-message" id="yesMessage" role="dialog" aria-modal="true" aria-labelledby="yes-heading" aria-hidden="true">
+    <h2 id="yes-heading">You said yes! 💖</h2>
+    <p>Best answer ever. I love you so much.</p>
+    <button type="button" class="btn-close-yes" id="closeYesMessage">Continue</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
